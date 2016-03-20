@@ -1,5 +1,5 @@
 var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 8,
+  zoom: 7,
   center: new google.maps.LatLng(8.460555, -11.779889),
   mapTypeId: google.maps.MapTypeId.ROADMAP
 });
@@ -37,7 +37,7 @@ function setupData(_data){
 	data = _data;
 var Pujehun = new google.maps.Polygon({
     paths: coords_Pujehun,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -47,7 +47,7 @@ var Pujehun = new google.maps.Polygon({
 
 var Bonthe = new google.maps.Polygon({
     paths: data_Bonthe,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -57,7 +57,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Kenema = new google.maps.Polygon({
     paths: coords_Kenema,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -67,7 +67,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Bo = new google.maps.Polygon({
     paths: coords_Bo,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -77,7 +77,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Moyamba = new google.maps.Polygon({
     paths: coords_Moyamba,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -87,7 +87,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Kailahun = new google.maps.Polygon({
     paths: coords_Kailahun,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -97,7 +97,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Western_Area_Rural = new google.maps.Polygon({
     paths: coords_Western_Area_Rural,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -107,7 +107,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Kono = new google.maps.Polygon({
     paths: coords_Kono,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -117,7 +117,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Western_Area_Urban = new google.maps.Polygon({
     paths: coords_Western_Area_Urban,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -127,7 +127,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Tonkolili = new google.maps.Polygon({
     paths: coords_Tonkolili,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -137,7 +137,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Port_Loko = new google.maps.Polygon({
     paths: coords_Port_Loko,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -147,7 +147,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Bombali = new google.maps.Polygon({
     paths: coords_Bombali,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -157,7 +157,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Kambia = new google.maps.Polygon({
     paths: coords_Kambia,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -167,7 +167,7 @@ var Bonthe = new google.maps.Polygon({
 
 	var Koinadugu = new google.maps.Polygon({
     paths: coords_Koinadugu,
-    strokeColor: '#FF0000',
+    strokeColor: '#000000',
     strokeOpacity: 0.8,
     strokeWeight: 2,
     fillColor: '#FF0000',
@@ -177,7 +177,22 @@ var Bonthe = new google.maps.Polygon({
 
 polygons = [Pujehun,Bonthe,Kenema,Bo,Moyamba,Kailahun,Western_Area_Rural,Kono,Western_Area_Urban,Tonkolili,Port_Loko,Bombali,Kambia,Koinadugu];
 
+
+    function getColor(intensity){
+        return '#' + get2DigitHex(intensity) + get2DigitHex(100 - intensity) + '00'
+        // return 'red';
+    }
+
+    function get2DigitHex(intensity){
+        ret = Number(Math.floor(intensity/100 * 255)).toString(16)
+        if(ret.length == 1){
+            ret = '0' + ret;
+        }
+        return ret;
+    }
+
 for(j=0;j<polygons.length;j=j+1){
+		polygons[j].setOptions({'fillColor':getColor(data[j]*100)});
 		polygon_fadein(polygons[j],data[j],1,null);
 }
 // var infowindow = new google.maps.InfoWindow();
@@ -207,6 +222,7 @@ function fadeOneIn(i){
 	}
 }
 function resetPolygons(){
+	// setThreatLevel(36);
 	for(j=0;j<polygons.length;j=j+1){
 				polygon_fadein(polygons[j],data[j],1,null);
 	}

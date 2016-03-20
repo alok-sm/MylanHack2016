@@ -1,2 +1,20 @@
-A Key aspect that crisis management teams use to combat the outbreak of a disease is through the  understanding of the disease itself which include areas of outbreak and possible propogation channels.
-The aim of our hack is to utilize artificial intelligence driven data modelling to model these parameters. 
+Let's not bore you with slide decks. I want to tell you a story.
+I've heard Sierra Leone is a great destination at this time of the year. Oh, but I remember hearing about Ebola there. 
+[click ebola]
+Oh. Wow. This looks risky. Maybe I should stick to the safers parts of Sierra Leone
+[click on district]
+Yikes, this still doesn't seem too safe. Maybe I should postpone my trip by a couple of months.
+[go to future]
+This looks better. I'll book my flight tickets now.
+
+Now, Let me don the hat of a MyLan executive.
+What would be my main goal? To increase the profitibality of MyLan, of course. I want to leverage this product. What we saw till now were nothing but predictions. These predictions can be a vital aspect in coming up with my business strategies. I will appropriately decide the production volumes and supply chain management for key drugs.
+
+So how do we do this magic? How are we different? We use historical data to capture large scale trends. 
+But what are these tweets doing here?  
+The architecture we have not only uses historical data. It also incorporates data from social media and we can also incorporate other trend portraying sources such as news headlines and weather reports. 
+For example predict an increat in the consumption of pain killers with a drop in temperature owing to arthiritis.
+
+Through the hack that we presented, we can save lives. This is the future.
+
+Any questions?
