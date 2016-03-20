@@ -12,8 +12,7 @@ What would be my main goal? To increase the profitibality of MyLan, of course. I
 
 So how do we do this magic? How are we different? We use historical data to capture large scale trends. 
 But what are these tweets doing here?  
-The architecture we have not only uses historical data. It also incorporates data from social media and we can also incorporate other trend portraying sources such as news headlines and weather reports. 
-For example predict an increat in the consumption of pain killers with a drop in temperature owing to arthiritis.
+The architecture we have not only uses historical data. It also incorporates data from social media and we can also incorporate other trend portraying sources such as news headlines, weather reports and data from on body sensors.
 
 Through the hack that we presented, we can save lives. This is the future.
 
